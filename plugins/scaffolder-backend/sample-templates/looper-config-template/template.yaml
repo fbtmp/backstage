@@ -11,25 +11,19 @@ metadata:
 spec:
   owner: web@example.com
   templater: cra
-  type: website
+  type: other
   path: '.'
 
   schema:
     required:
-      - component_id
-      - use_typescript
+      - directory_name
     properties:
-      component_id:
+      directory_name:
         title: Name
         type: string
         pattern: ^[a-z0-9]+(-[a-z0-9]+)*$
         description: Unique name of the component. Lowercase, URL-safe characters only.
-      description:
-        title: Description
+      slack_channel:
+        title: Slack Channel
         type: string
-        description: Help others understand what this website is for.
-      use_typescript:
-        title:  Use TypeScript
-        type: boolean
-        description: Include TypeScript
-        default: true
+        description: Post build notifications to this Slack channel.
